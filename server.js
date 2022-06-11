@@ -27,10 +27,12 @@ app.use(express.static("public"));
 app.use("/api", apiRoutes);
 app.use("/", htmlRoutes);
 
+// this is for homepage
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, '/public/index.html'))
 })
 
+// listen to start
 app.listen(PORT,() => console.log(`listening on port ${PORT}`));
 
 // router.get("/note," (req,res)=>{
